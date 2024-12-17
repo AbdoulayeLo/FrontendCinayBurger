@@ -1,0 +1,24 @@
+
+<div class="blank-layout-container justify-content-center align-items-center bg-light-primary">
+  <div class="position-relative row w-100 h-100 bg-gredient justify-content-center">
+    <div class="col-md-12 d-flex align-items-center">
+      <mat-card class="cardWithShadow boxed-auth">
+        <mat-card-content class="p-32">
+          <div *ngIf="burger">
+          <div class="card w-100 h-100  bg-gredient justify-content-center">
+            <img [src]="burger.image" alt="{{ burger.nom }} ">
+            <div class="card-body">
+              <h4>{{ burger.nom }}</h4>
+              <h5>{{ burger.prix }}</h5>
+              <p>Description: {{ burger.description }}</p>
+              <a routerLink="/burger" class="btn btn-primary">Retour</a>
+            </div>
+          </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </div>
+</div>
+

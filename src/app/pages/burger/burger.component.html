@@ -1,0 +1,51 @@
+<div class="row">
+<!--  " *ngFor="let tabBurger of tabBurgers-->
+<!--  @for (tabBurger of tabBurgers; track tabBurger){-->
+  <div class="col-sm-6 col-lg-3" *ngFor="let tabBurger of tabBurgers">
+    <mat-card class="cardWithShadow productcard overflow-hidden">
+      <a >
+        <img src="{{tabBurger.image}}" alt="{{tabBurger.nom}}" class="w-100" mat-card-image />
+      </a>
+      <mat-card-content class="p-b-24 p-t-12 position-relative">
+        <a routerLink="/ajoutCommande/{{tabBurger.id}}" (click)="selectBurger(tabBurger.id)"
+          mat-mini-fab
+          color="success"
+          class="btn btn-success btn-sm float-lg-start"
+          matTooltip="Add to Cart"
+        >
+          Commander
+        </a>
+        <a
+          routerLink="/DetailBurger/{{tabBurger.id}}"
+          mat-mini-fab
+          color="primary"
+          class="btn btn-warning btn-sm float-end offset-1"
+          matTooltip="Add to Cart"
+        >
+          voir Details
+        </a>
+        <mat-card-title class="mat-headline-2 f-s-16 m-b-4">{{
+            tabBurger.nom
+          }}</mat-card-title>
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <h4 class="mat-body-2 f-w-600">{{ tabBurger.prix }} F CFA</h4>
+          </div>
+          <div class="m-l-auto d-flex gap-4">
+            <span
+            ><i-tabler name="star" class="fill-warning icon-18"></i-tabler
+            ></span>
+            <span
+            ><i-tabler name="star" class="fill-warning icon-18"></i-tabler
+            ></span>
+            <span
+            ><i-tabler name="star" class="fill-warning icon-18"></i-tabler
+            ></span>
+
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+<!--  }-->
+</div>

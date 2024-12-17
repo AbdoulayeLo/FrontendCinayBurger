@@ -1,0 +1,57 @@
+<div class="blank-layout-container justify-content-center align-items-center bg-light-primary">
+  <div class="position-relative row w-100 h-100 bg-gredient justify-content-center">
+    <div class="col-md-12 d-flex align-items-center">
+      <mat-card class="cardWithShadow boxed-auth">
+        <mat-card-content class="p-32">
+          <form class="m-t-30" [formGroup]="burgerForm" (ngSubmit)="addUpdateBurger()"  enctype="multipart/form-data">
+            <!-- Nom -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Nom</mat-label>
+<!--            <mat-form-field appearance="outline" class="w-100" color="primary">-->
+<!--              <input matInput type="text" aria-label="Nom"  formControlName="nom" [ngClass]="{'border-danger':verifForm && burgerForm.controls.nom.errors}"/>-->
+<!--            </mat-form-field>-->
+            <input type="text" class="form-control mb-4" formControlName="nom" [ngClass]="{'border-danger':verifForm && burgerForm.controls.nom.errors}">
+            <span class="text-danger fw-bold" *ngIf="verifForm && burgerForm.controls.nom.errors">* nom obligatoire</span>
+
+            <!-- Prix -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Prix</mat-label>
+<!--            <mat-form-field appearance="outline" class="w-100" color="primary">-->
+<!--              <input matInput type="number" aria-label="Prix" formControlName="prix"/>-->
+<!--            </mat-form-field>-->
+            <input type="number" class="form-control mb-4" formControlName="prix" [ngClass]="{'border-danger':verifForm && burgerForm.controls.prix.errors}">
+            <span class="text-danger fw-bold" *ngIf="verifForm && burgerForm.controls.nom.errors">* prix obligatoire</span>
+
+
+            <!-- Description -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Description</mat-label>
+<!--            <mat-form-field appearance="outline" class="w-100" color="primary">-->
+<!--              <input matInput type="text" aria-label="Description" formControlName="description"/>-->
+<!--            </mat-form-field>-->
+            <input type="text" class="form-control mb-4" formControlName="description" [ngClass]="{'border-danger':verifForm && burgerForm.controls.description.errors}">
+            <span class="text-danger fw-bold" *ngIf="verifForm && burgerForm.controls.nom.errors">* description obligatoire</span>
+
+
+            <!-- Image -->
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block">Image</mat-label>
+<!--            <mat-form-field appearance="fill" class="w-100" color="primary">-->
+<!--              <input matInput type="" aria-label="Image" />-->
+<!--            </mat-form-field>-->
+<!--              <input  type="file" appearance="fill" aria-label="Image" class="form-control mb-4" formControlName="image "/>-->
+<!--            <span class="text-danger fw-bold" *ngIf="verifForm && burgerForm.controls.image.errors">* image obligatoire</span>-->
+            <input type="file"  aria-label="Image" class="form-control mb-4" formControlName="image" accept="image/*"  (change)="onFileChange($event)"
+                   [ngClass]="{'border-danger':verifForm && burgerForm.controls.description.errors}"/>
+<!--            (change)="onFileChange($event)-->
+            <span class="text-danger fw-bold" *ngIf="verifForm && burgerForm.controls.image.errors">* image obligatoire</span>
+
+
+            <button mat-flat-button color="primary" class="w-100 mt-4" type="submit">
+              Ajouter
+            </button>
+          </form>
+
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+  </div>
+</div>
+

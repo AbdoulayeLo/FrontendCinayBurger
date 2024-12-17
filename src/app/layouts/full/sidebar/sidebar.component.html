@@ -1,0 +1,16 @@
+<div class="flex-layout">
+  <app-branding></app-branding>
+  <mat-nav-list class="sidebar-list">
+    <app-nav-item  *ngFor="let item of filteredNavItems" [item]="item"> </app-nav-item>
+  </mat-nav-list>
+</div>
+<!--<nav>-->
+<!--  <ul>-->
+<!--    <li *ngFor="let item of filteredNavItems" [item]="item">-->
+<!--      <a [routerLink]="item.route">-->
+<!--        <i class="icon {{ item.iconName }}"></i>-->
+<!--        {{ item.displayName || item.navCap }}-->
+<!--      </a>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--</nav>-->
